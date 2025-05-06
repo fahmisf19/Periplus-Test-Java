@@ -1,0 +1,32 @@
+2025-05-06 18:54:58 INFO  - Setting up browser and WebDriver
+2025-05-06 18:55:01 INFO  - STEP 1: Navigate to Periplus website
+2025-05-06 18:55:08 INFO  - Navigate to website completed
+2025-05-06 18:55:08 INFO  - STEP 2: Navigate to login page
+2025-05-06 18:55:08 INFO  - Go to login page completed
+2025-05-06 18:55:08 INFO  - STEP 3: Perform login with test credentials
+2025-05-06 18:55:13 INFO  - Successfully logged in and verified account page URL
+2025-05-06 18:55:13 INFO  - STEP 4: Navigate back to homepage
+2025-05-06 18:55:16 INFO  - Navigate to website completed
+2025-05-06 18:55:16 INFO  - STEP 5: Add specific book to cart via JavaScript
+2025-05-06 18:55:17 INFO  - Add specific book completed
+2025-05-06 18:55:17 INFO  - STEP 6: Verify cart contents
+2025-05-06 18:55:17 INFO  - Verify cart completed
+2025-05-06 18:55:17 INFO  - Test completed successfully
+2025-05-06 18:55:17 INFO  - Cleaning up - closing browser and releasing resources
+2025-05-06 18:56:55 INFO  - ====== PERIPLUS TEST EXECUTION STARTING ======
+2025-05-06 18:56:55 INFO  - Setting up browser and WebDriver
+2025-05-06 18:56:58 INFO  - STEP 1: Navigate to Periplus website
+2025-05-06 18:57:03 INFO  - Navigate to website completed
+2025-05-06 18:57:03 INFO  - STEP 2: Navigate to login page
+2025-05-06 18:57:03 INFO  - Go to login page completed
+2025-05-06 18:57:03 INFO  - STEP 3: Perform login with test credentials
+2025-05-06 18:57:05 INFO  - Successfully logged in and verified account page URL
+2025-05-06 18:57:05 INFO  - STEP 4: Navigate back to homepage
+2025-05-06 18:57:09 INFO  - Navigate to website completed
+2025-05-06 18:57:09 INFO  - STEP 5: Add specific book to cart via JavaScript
+2025-05-06 18:57:09 INFO  - Add specific book completed
+2025-05-06 18:57:09 INFO  - STEP 6: Verify cart contents
+2025-05-06 18:57:10 INFO  - Verify cart completed
+2025-05-06 18:57:10 INFO  - Test completed successfully
+2025-05-06 18:57:10 INFO  - Cleaning up - closing browser and releasing resources
+2025-05-06 18:57:10 INFO  - ====== PERIPLUS TEST EXECUTION COMPLETED ======
