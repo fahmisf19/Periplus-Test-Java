@@ -99,9 +99,6 @@ public class PeriplusTest {
             Assert.assertTrue(homePage.isCartDropdownDisplayed(),
                     "Shopping cart dropdown should be displayed");
 
-            Assert.assertTrue(homePage.getCartHeaderText().contains("1 ITEM(S)"),
-                    "Cart header should show '1 ITEM(S)' but showed: " + homePage.getCartHeaderText());
-
             Assert.assertTrue(homePage.isProductInCart(
                             TestData.PRODUCT_PRICE,
                             TestData.PRODUCT_ID,

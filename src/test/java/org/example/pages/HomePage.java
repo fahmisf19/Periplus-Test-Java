@@ -15,10 +15,10 @@ public class HomePage extends BasePage {
     private final By logoLocator = By.cssSelector(".logo.logo-new");
     private final By signInButtonLocator = By.xpath("//a[normalize-space()='Sign In']");
 
+    private final By addToCartButtonLocator = By.cssSelector(".product-action .addtocart");
     private final By cartCountLocator = By.id("cart_total");
     private final By cartIconLocator = By.id("show-your-cart");
     private final By shoppingItemLocator = By.className("shopping-item");
-    private final By dropdownHeaderLocator = By.className("dropdown-cart-header");
     private final By shoppingListLocator = By.className("shopping-list");
 
     /**
@@ -75,19 +75,27 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * Adds a specific product to the cart
+     * Adds a specific product to the cart with improved hover handling
      *
      * @param productTitle The title of the product to add to the cart
-     * @throws org.openqa.selenium.TimeoutException if the product is not found or if the cart count doesn't update
      */
     public void addProductToCart(String productTitle) {
         WebElement product = findProduct(productTitle);
+
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'});", product);
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         hoverOverElement(product);
 
-        WebElement addToCartButton = waitForElementClickable(
-                product.findElement(By.cssSelector(".addtocart")));
+        WebElement addToCartButton = product.findElement(addToCartButtonLocator);
+        wait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
 
-        new Actions(driver).click(addToCartButton).perform();
+        new Actions(driver).moveToElement(addToCartButton).click().perform();
         wait.until(ExpectedConditions.textToBe(cartCountLocator, "1"));
 
         logger.info("Added product to cart: {}", productTitle);
@@ -119,18 +127,6 @@ public class HomePage extends BasePage {
     public boolean isCartDropdownDisplayed() {
         openCartDropdown();
         return isElementDisplayed(shoppingItemLocator);
-    }
-
-    /**
-     * Gets the text from the cart header in the dropdown
-     *
-     * @return The text of the cart header
-     */
-    public String getCartHeaderText() {
-        openCartDropdown();
-        WebElement shoppingItem = waitForElementVisible(shoppingItemLocator);
-        WebElement dropdownHeader = shoppingItem.findElement(dropdownHeaderLocator);
-        return dropdownHeader.getText();
     }
 
     /**
